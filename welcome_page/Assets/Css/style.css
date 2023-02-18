@@ -207,7 +207,11 @@
   }
 
   /*=============== FOOTER ===============*/
+.footer{
+  background-color: black;
+}
 .footer__container{
+  padding-left: 100px;
     row-gap: 2.5rem;
   }
   
@@ -227,6 +231,7 @@
   
   .footer__description,
   .footer__link{
+    color: #fff;
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
   }
@@ -252,7 +257,7 @@
   }
   
   .footer__link{
-    color: var(--text-color);
+    color: #fff;
     transition: .3s;
   }
   
@@ -263,7 +268,7 @@
   
   .footer__social-link{
     font-size: 1.25rem;
-    color: var(--text-color);
+    color: #fff;
     transition: .3s;
   }
   
