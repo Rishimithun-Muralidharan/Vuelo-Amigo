@@ -327,50 +327,35 @@
 
 @media screen and (min-width: 770px) {
 
-  .footer__container{
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
-  }
-}
-
-@media screen and (min-width: 770px) {
-  .home__container{
-    grid-template-columns: repeat(2, 1fr);
-    padding-top: 2rem;
-  }
-
-  .home__orbe{
-    width: 255px;
-    align-self: flex-end;
-  }
-  
-  .home__data{
-    padding-bottom: 2rem;
-  }
-
-  .logos__container{
-    grid-template-columns: repeat(4, max-content);
-    justify-content: center;
-  }
-
-  .popular__container{
-    padding: 1rem 12rem 5rem;
-  }
-
-  .value__container,
-  .contact__container{
-    grid-template-columns: repeat(2, 1fr);
+  .main-container{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Img/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
     align-items: center;
   }
 
-  .contact__images{
-    order: 1;
+  #main-logo{
+    padding-top: 390px;
   }
-
-  .contact__card{
-    justify-content: initial;
+  .description-container{
+    height: 40vh;
+    padding: 100px 50px 0 50px;
   }
-
+  .middle-container{
+    width: 100%;
+    height: 60vh;
+    background-image: url('../Img/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
   .footer__container{
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
@@ -379,6 +364,25 @@
 
 /* For large devices */
 @media screen and (min-width: 1020px) {
+
+  #main-logo{
+    width: 500px;
+  }
+
+  .description-container{
+    height: 30vh;
+    padding: 100px 50px 0 50px;
+  }
+  .middle-container{
+    width: 100%;
+    height: 40vh;
+    background-image: url('../Img/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
   .footer__content{
     grid-template-columns: repeat(4, max-content);
   }
