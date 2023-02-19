@@ -4,8 +4,9 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2500,
     delay: 300,
-    // reset: true
+    reset: true
 });
 
 sr.reveal('#main-logo, .footer__container, .description-card, .message-card');
-sr.reveal('.footer__info, #get_start-button', {delay: 400});
+sr.reveal('.footer__info', {delay: 400});
+sr.reveal('#get_start-button', {delay: 500});

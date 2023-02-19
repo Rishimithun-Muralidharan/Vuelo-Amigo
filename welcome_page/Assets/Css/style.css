@@ -311,12 +311,26 @@
   }
 
   @media screen and (max-width: 320px){
+
+    .description-container{
+      height: 80vh;
+      padding: 100px 50px 0 50px;
+    }
   
     .footer__content{
       gap: 2.5rem;
     }
   }
 
+  @media screen and (max-width: 395px){
+    .description-container{
+      height: 100vh;
+      padding: 100px 50px 0 50px;
+    }
+    .middle-container{
+      height: 70vh;
+    }
+  }
   /* For medium devices */
 @media screen and (min-width: 570px){
 
