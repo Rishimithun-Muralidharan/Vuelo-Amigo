@@ -385,7 +385,7 @@
 
   .description-container{
     height: 30vh;
-    padding: 100px 50px 0 50px;
+    padding: 120px 50px 0 50px;
   }
   .middle-container{
     width: 100%;
@@ -416,17 +416,3 @@
     padding-bottom: 2rem;
   }
 }
-/* } */
-
-/* =============== BREAKPOINTS ===============
-/* For small devices */
-/* @media screen and (max-width: 350px){
-  .container{
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .section{
-    padding: 3.5rem 0 1rem;
-  }
-} */
