@@ -23,3 +23,18 @@ for word in tokenized_words:
         final_words.append(words)
 
 print(final_words)
+
+# NLP Emotion Algorithm
+# 1) Check if the word in the final word list is also present in emotion.txt
+#  - open the emotion file
+#  - Loop through each line and clear it
+#  - Extract the word and emotion using split
+
+# 2) If word is present -> Add the emotion to emotion_list
+# 3) Finally count each emotion in the emotion list
+
+with open('emotions.txt', 'r') as file:
+    for line in file:
+        clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
+        word, emotion = clear_line.split(':')
+        print("Word :" + word + " " + "Emotion :" + emotion)
