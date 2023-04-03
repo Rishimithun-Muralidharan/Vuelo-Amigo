@@ -10,5 +10,6 @@ cleaned_text = lower_case.translate(str.maketrans('' , '' , string.punctuation))
 print(cleaned_text)
 sachintha Sasanjaya
 Vinuja Rajapaksha
+jannnn
 
 
