@@ -1,5 +1,7 @@
 import string
 from collections import Counter
+import matplotlib.pyplot as plt
+
 text = open("read.txt", encoding="utf-8").read()
 lower_case = text.lower()
 cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
@@ -21,9 +23,7 @@ stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you"
 final_words = []
 for word in tokenized_words:
     if word not in stop_words:
-        final_words.append(words)
-
-print(final_words)
+        final_words.append(word)
 
 # NLP Emotion Algorithm
 # 1) Check if the word in the final word list is also present in emotion.txt
@@ -46,3 +46,9 @@ with open('emotions.txt', 'r') as file:
 print(emotion_list)
 w = Counter(emotion_list)
 print(w)
+
+fig, ax1 = plt.subplots()
+ax1.bar(w.keys(), w.values())
+fig.autofmt_xdate()
+plt.savefig('graph.png')
+plt.show()
