@@ -1,5 +1,5 @@
 #Cleaning Text
-# 1)Create Text file and take text from it
+#1)Create Text file and take text from it
 #2)Conver the letters into lowercase
 #3)Removing punctuations
 
