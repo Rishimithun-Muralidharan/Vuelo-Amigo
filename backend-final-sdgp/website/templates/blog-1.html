@@ -42,7 +42,7 @@
                 <div class="content-box clearfix">
                     <h1>Reviews</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="{{ url_for('views.dashboard') }}">Home</a></li>
+                        <li><a href="{{ url_for('views.dashboard') }}">DashBoard</a></li>
                         <li>Reviews</li>
                     </ul>
                 </div>
@@ -320,12 +320,16 @@
 {#                                </div>#}
                                 <ul class="list-group list-group-flush" id="notes">
                                     {% for note in user.notes %}
-                                    <li class="list-group-item">
-                                        {{ note.data }}
-                                        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </li>
+                                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <li class="list-group-item">
+                                            {{ note.data }}
+                                            <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </li>
+                                    </div>
+                                    </div>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -346,10 +350,12 @@
                                     <h4>Search</h4>
                                 </div>
                                 <div class="search-inner">
-                                    <form action="http://azim.commonsupport.com/Realshed/blog-1.html" method="post">
+                                    <form method="post">
                                         <div class="form-group">
                                             <input type="search" name="search_field" placeholder="Search" required="">
                                             <button type="submit"><i class="fas fa-search"></i></button>
+                                            <br>
+                                            <a href="{{ url_for('views.addreview') }}" class="theme-btn btn-one">Add a New Review</a>
                                         </div>
                                     </form>
                                 </div>
@@ -421,6 +427,18 @@
 
     <!-- main-js -->
     <script src="{{ url_for('static', filename='ViewReviewPage/assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='/index.js') }}"></script>
+
+        <script type="text/javascript">
+			function deleteNote(noteId) {
+				fetch("/delete-note", {
+					method: "POST",
+					body: JSON.stringify({ noteId: noteId }),
+				}).then((_res) => {
+					window.location.href = "/viewreview";
+				});
+			}
+		</script>
 
 </body><!-- End of .page_wrapper -->
 

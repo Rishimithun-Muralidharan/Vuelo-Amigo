@@ -14,7 +14,7 @@ const Settinglinks = [{
         linkLogo: "contacts"
     },
     {
-        link: "blog-1.html",
+        link: "#",
         linkText: "user settings",
         linkLogo: "manage_accounts"
     }
