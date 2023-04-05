@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title></title>
+
+<!-- Fav Icon -->
+<link rel="shortcut icon" href="{{ url_for('static', filename='welcome_page/Assets/Img/favicon.png') }}" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/font-awesome-all.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/flaticon.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/owl.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/animate.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/jquery-ui.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/nice-select.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/color/theme-color.css') }}" id="jssDefault" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/switcher-style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='Signin-Signup_Page/assets/css/responsive.css') }}" rel="stylesheet">
+
+</head>
+
+
+<!-- page wrapper -->
+<body>
+
+    <div class="boxed_wrapper">
+
+
+
+
+
+        <!-- Mobile Menu  -->
+        <!-- <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="dashboard.html"><img src="" alt="" title=""></a></div> -->
+                <!-- <div class="menu-outer">Here Menu Will Come Automatically Via Javascript / Same Menu as in Header</div> -->
+                <!-- <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Chicago 12, Melborne City, USA</li>
+                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="dashboard.html"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="dashboard.html"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="dashboard.html"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="dashboard.html"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="dashboard.html"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav> -->
+        <!-- </div>End Mobile Menu -->
+
+
+        <!--Page Title-->
+        <section class="page-title-two bg-color-1 centred">
+            <div class="pattern-layer">
+{#                <div class="pattern-1" style="background-image: url(assets/images/shape/shape-9.png);"></div>#}
+{#                <div class="pattern-2" style="background-image: url(assets/images/shape/shape-10.png);"></div>#}
+            </div>
+            <div class="auto-container">
+                <div class="content-box clearfix">
+                    <h1>Sign In</h1>
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="{{ url_for('views.home') }}">Home</a></li>
+                        <li>Sign In</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- ragister-section -->
+        <section class="ragister-section centred sec-pad">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 big-column">
+                        <div class="sec-title">
+                            <h5>Sign in</h5>
+                            <h2>Sign In With Vuelo Amigo </h2>
+                        </div>
+                        <div class="tabs-box">
+                            <div class="tab-btn-box">
+                                <!-- <ul class="tab-btns tab-buttons centred clearfix">
+                                    <li class="tab-btn active-btn" data-tab="#tab-1">User</li>
+                                    <li class="tab-btn" data-tab="#tab-2">User</li>
+                                </ul> -->
+                            </div>
+                            <div class="tabs-content">
+                                <div class="tab active-tab" id="tab-1">
+                                    <div class="inner-box">
+                                        <h4>Sign in</h4>
+                                        <form method="post" class="default-form">
+                                            <!-- <div class="form-group">
+                                                <label>User name</label>
+                                                <input type="text" name="name" required="">
+                                            </div> -->
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input type="email" name="email" required="" class="form-control" id="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" name="password" required="" class="form-control" id="password">
+                                            </div>
+                                            <div class="form-group message-btn">
+                                                <button type="submit" class="theme-btn btn-one">Sign in</button>
+                                            </div>
+                                        </form>
+                                        <div class="othre-text">
+                                            <p>Have not any account? <a href="{{ url_for('auth.sign_up') }}">Register Now</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="tab" id="tab-2">
+                                    <div class="inner-box">
+                                        <h4>Sign in</h4>
+                                        <form action="http://azim.commonsupport.com/Realshed/signin.html" method="post" class="default-form">
+                                            <div class="form-group">
+                                                <label>User name</label>
+                                                <input type="text" name="name" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input type="email" name="email" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" name="name" required="">
+                                            </div>
+                                            <div class="form-group message-btn">
+                                                <button type="submit" class="theme-btn btn-one">Sign in</button>
+                                            </div>
+                                        </form>
+                                        <div class="othre-text">
+                                            <p>Have not any account? <a href="signup.html">Register Now</a></p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ragister-section end -->
+
+
+
+
+
+
+        <!--Scroll to top-->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <span class="fal fa-angle-up"></span>
+        </button>
+    </div>
+
+
+    <!-- jequery plugins -->
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/owl.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/wow.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/scrollbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/isotope.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/jQuery.style.switcher.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/jquery-ui.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/product-filter.js') }}"></script>
+
+    <!-- map script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/gmaps.js') }}"></script>
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/map-helper.js') }}"></script>
+
+    <!-- main-js -->
+    <script src="{{ url_for('static', filename='Signin-Signup_Page/assets/js/script.js') }}"></script>
+
+</body><!-- End of .page_wrapper -->
+
+
+</html>
