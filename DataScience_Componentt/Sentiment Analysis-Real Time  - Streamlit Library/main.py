@@ -11,7 +11,8 @@ score = s.polarity_scores(user_input)
 if score == 0:
     st.write(" ")
 elif score["neg"] !=0:
-    st.write("# Negative")
+    st.write("# Negative 😫 ")
 elif score["pos"] !=0:
-    st.write("# Positive")
+    st.write("# Positive 😀 ")
+
 
