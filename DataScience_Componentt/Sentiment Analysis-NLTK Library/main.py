@@ -53,9 +53,17 @@ with open('emotions.txt' , 'r') as file:     #Analysing emotion in the sentance
         if word in final_words:
             emotion_list.append(emotion)
 
-print(emotion_list)
+#print(emotion_list)
 w = Counter(emotion_list)
-print(w)
+#print(w)
+
+#Plotting the emotions on the graph
+fig , ax1 = plt.subplots()
+ax1.bar(w.keys(), w.values())
+fig.autofmt_xdate()
+plt.savefig('grahp.png')
+plt.show
+
 
 def sentiment_analyse(sentiment_text) :
     score = SentimentIntensityAnalyzer().polarity_scores(sentiment_text)
@@ -73,9 +81,3 @@ def sentiment_analyse(sentiment_text) :
 
 sentiment_analyse(cleaned_text)
 
-#Plotting the emotions on the graph
-fig , ax1 = plt.subplots()
-ax1.bar(w.keys(), w.values())
-fig.autofmt_xdate()
-plt.savefig('grahp.png')
-plt.show
