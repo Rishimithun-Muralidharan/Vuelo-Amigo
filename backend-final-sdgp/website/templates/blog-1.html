@@ -327,6 +327,11 @@
                                             <button type="button" class="close" onClick="deleteNote({{ note.id }})">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
+                                            <br>
+                                            <br>
+                                            <button type="button" class="theme-btn" onClick="inputText({{ note.id }})">
+                                                <span aria-hidden="true">Analyze</span>
+                                            </button>
                                         </li>
                                     </div>
                                     </div>
@@ -357,6 +362,8 @@
                                             <br>
                                             <a href="{{ url_for('views.addreview') }}" class="theme-btn btn-one">Add a New Review</a>
                                         </div>
+
+                                        <p>{{ result }}</p>
                                     </form>
                                 </div>
                             </div>
@@ -428,6 +435,18 @@
     <!-- main-js -->
     <script src="{{ url_for('static', filename='ViewReviewPage/assets/js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='/index.js') }}"></script>
+
+
+        <script type="text/javascript">
+            function inputText(noteId){
+                fetch("/input", {
+                    method: "POST",
+                    body: JSON.stringify({ noteId: noteId }),
+                }).then((_res) => {
+                    window.location.href = "/viewreview";
+                });
+            }
+        </script>
 
         <script type="text/javascript">
 			function deleteNote(noteId) {

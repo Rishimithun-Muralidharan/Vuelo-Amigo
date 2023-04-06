@@ -84,6 +84,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                                             <button class="theme-btn btn-one" type="submit" name="submit-form">Add Review</button>
                                             <a href="{{ url_for('views.viewreview') }}" class="theme-btn btn-one">View Reviews</a>
+                                            <p>{{ result }}</p>
                                         </div>
                                     </div>
                                 </form>
@@ -94,6 +95,12 @@
                                         <button type="button" class="close" onClick="deleteNote({{ note.id }})">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
+                                        <br>
+                                        <br>
+                                        <button type="button" class="theme-btn" onClick="inputText({{ note.id }})">
+                                            <span aria-hidden="true">Analyze</span>
+                                        </button>
+                                    <p>{{ result }}</p>
                                     </li>
                                     {% endfor %}
                                 </ul>
@@ -129,6 +136,17 @@
     <!-- main-js -->
     <script src="{{ url_for('static', filename='AddReviewPage/assets/js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='/index.js') }}"></script>
+
+        <script type="text/javascript">
+            function inputText(noteId){
+                fetch("/input", {
+                    method: "POST",
+                    body: JSON.stringify({ noteId: noteId }),
+                }).then((_res) => {
+                    window.location.href = "/addreview";
+                });
+            }
+        </script>
 
         <script type="text/javascript">
 			function deleteNote(noteId) {
