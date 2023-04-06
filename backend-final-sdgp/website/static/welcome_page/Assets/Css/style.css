@@ -129,7 +129,7 @@
 .main-container{
     width: 100%;
     height: 80vh;
-    background-image: url('../Img/background-mobile.png');
+    background-image: url('../Img/bg-mobile.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -169,7 +169,7 @@
 .middle-container{
     width: 100%;
     height: 60vh;
-    background-image: url('../Img/background-mobile.png');
+    background-image: url('../Img/bg-mobile.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -182,7 +182,7 @@
 }
 #message{
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .button{
@@ -344,7 +344,7 @@
   .main-container{
     width: 100%;
     height: 100vh;
-    background-image: url('../Img/background.png');
+    background-image: url('../Img/bg-2.jpg');.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -363,7 +363,7 @@
   .middle-container{
     width: 100%;
     height: 60vh;
-    background-image: url('../Img/background.png');
+    background-image: url('../Img/bg-2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -391,7 +391,7 @@
   .middle-container{
     width: 100%;
     height: 60vh;
-    background-image: url('../Img/background.png');
+    background-image: url('../Img/bg-2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
