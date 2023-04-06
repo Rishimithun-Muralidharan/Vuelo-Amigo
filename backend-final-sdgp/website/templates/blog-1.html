@@ -332,6 +332,9 @@
                                             <button type="button" class="theme-btn" onClick="inputText({{ note.id }})">
                                                 <span aria-hidden="true">Analyze</span>
                                             </button>
+                                            <br>
+                                            <br>
+                                            <p>Result: <span id="result"></span></p>
                                         </li>
                                     </div>
                                     </div>
@@ -387,13 +390,13 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="tags-list clearfix">
-                                        <li><a href="blog-details.html">Real Estate</a></li>
-                                        <li><a href="blog-details.html">HouseHunting</a></li>
-                                        <li><a href="blog-details.html">Architecture</a></li>
-                                        <li><a href="blog-details.html">Interior</a></li>
-                                        <li><a href="blog-details.html">Sale</a></li>
-                                        <li><a href="blog-details.html">Rent Home</a></li>
-                                        <li><a href="blog-details.html">Listing</a></li>
+                                        <li><a href="#">Good Service</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Attentive</a></li>
+                                        <li><a href="#l">Air Hostess</a></li>
+                                        <li><a href="#">Crash Landing</a></li>
+                                        <li><a href="#">Seating Space</a></li>
+                                        <li><a href="#">Listing</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -435,6 +438,24 @@
     <!-- main-js -->
     <script src="{{ url_for('static', filename='ViewReviewPage/assets/js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='/index.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#submit').click(function() {
+          var noteId = $('#noteId').val();
+          $.ajax({
+            type: 'POST',
+            url: '/input',
+            data: JSON.stringify({noteId: noteId}),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function(response) {
+              $('#result').text(response.result);
+            }
+          });
+        });
+      });
+    </script>
 
 
         <script type="text/javascript">

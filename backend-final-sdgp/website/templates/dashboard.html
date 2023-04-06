@@ -60,7 +60,7 @@
               Havingtrouble in Vuelo Amigo.<br />Please contact us for more
               questions.
             </p>
-{#            <a href="{{ url_for('static', filename='dashboard_page/style2.css') }}" >Go To Help Center</a>#}
+            <a href="{{ url_for('views.aboutus') }}" >Go To Help Center</a>
           </div>
         </div>
       </div>
@@ -100,9 +100,9 @@
                 </span>
               </a>
 
-              <a href="{{ url_for('views.addreview') }}" class="button profile">
+              <a href="{{ url_for('views.aboutus') }}" class="button profile">
                 <span class="material-symbols-rounded">
-                  <i class='bx bx-user-circle' style='color:#010201' ></i>
+                  <i class='bx bx-info-circle' ></i>
                 </span>
               </a>
 
@@ -295,7 +295,7 @@
 
                       <ul class="footer__links">
                           <li>
-                              <a href="#" class="footer__link">About Us</a>
+                              <a href="{{ url_for('views.aboutus') }}" class="footer__link">About Us</a>
                           </li>
 
                           <li>

@@ -40,6 +40,10 @@ def addreview():
 def viewreview():
     return render_template("blog-1.html", user=current_user)
 
+@views.route('/aboutus', methods=['GET', 'POST'])
+def aboutus():
+    return render_template("about.html", user=current_user)
+
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
@@ -61,10 +65,11 @@ def input():
     note = Note.query.get(noteId)
     if note:
         if note.user_id == current_user.id:
-            result = note.data
+            result = "Positive"
             print(result)
+            return jsonify(result=result)
+    return jsonify(error='Note not found or user not authorized')
 
-    return jsonify({result:result})
 
 # @views.route('/predict', methods=['GET',['POST']])
 # def predict(data):
