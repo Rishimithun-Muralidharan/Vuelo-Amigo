@@ -59,7 +59,7 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="blog-grid-content">
                             <div class="row clearfix">
-{#                                <div class="col-lg-6 col-md-6 col-sm-12 news-block">#}
+<!-- {#                                <div class="col-lg-6 col-md-6 col-sm-12 news-block">#}
 {#                                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">#}
 {#                                        <div class="inner-box">#}
 {#                                            <div class="image-box">#}
@@ -318,16 +318,18 @@
 {#                                            </div>#}
 {#                                        </div>#}
 {#                                    </div>#}
-{#                                </div>#}
+{#                                </div>#} -->
                                 <ul class="list-group list-group-flush" id="notes">
                                     {% for note in user.notes %}
                                     <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                     <div class="inner-box">
                                         <li class="list-group-item">
-                                            {{ note.data }}
                                             <button type="button" class="close" onClick="deleteNote({{ note.id }})">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
+                                            <br>
+                                            <br>
+                                            {{ note.data }}
                                             <br>
                                             <br>
                                             <button type="button" class="theme-btn" onClick="inputText({{ note.id }})">
@@ -335,7 +337,7 @@
                                             </button>
                                             <br>
                                             <br>
-                                            <p>Result: <span id="result"></span></p>
+<!-- {#                                            <p>Result: <span id="result"></span></p>#} -->
                                         </li>
                                     </div>
                                     </div>
@@ -366,21 +368,20 @@
                                             <br>
                                             <a href="{{ url_for('views.addreview') }}" class="theme-btn btn-one">Add a New Review</a>
                                         </div>
-
-                                        <p>{{ result }}</p>
                                     </form>
                                 </div>
                             </div>
                             <div class="sidebar-widget social-widget">
                                 <div class="widget-title">
-                                    <h4>Follow Us On</h4>
+                                    <h4>Results</h4>
                                 </div>
                                 <ul class="social-links clearfix">
-                                    <li><a href="blog-1.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="blog-1.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="blog-1.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="blog-1.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="blog-1.html"><i class="fab fa-instagram"></i></a></li>
+<!-- {#                                    <li><a href="blog-1.html"><i class="fab fa-facebook-f"></i></a></li>#}
+{#                                    <li><a href="blog-1.html"><i class="fab fa-google-plus-g"></i></a></li>#}
+{#                                    <li><a href="blog-1.html"><i class="fab fa-twitter"></i></a></li>#}
+{#                                    <li><a href="blog-1.html"><i class="fab fa-linkedin-in"></i></a></li>#}
+{#                                    <li><a href="blog-1.html"><i class="fab fa-instagram"></i></a></li>#} -->
+                                    <p></p>
                                 </ul>
                             </div>
 

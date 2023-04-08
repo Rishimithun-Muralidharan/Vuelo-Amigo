@@ -1,11 +1,10 @@
+import sqlite3
+from sqlite3 import Error
 from flask import Blueprint, render_template, request, flash , jsonify
 from flask_login import login_required, current_user
 from .models import Note
 from . import db
 import json
-# from transformers import AutoTokenizer
-# from transformers import AutoModelForSequenceClassification
-# from scipy.special import softmax
 views = Blueprint('views', __name__)
 
 
@@ -63,31 +62,51 @@ def input():
     note = json.loads(request.data)
     noteId = note['noteId']
     note = Note.query.get(noteId)
-    if note:
-        if note.user_id == current_user.id:
-            result = "Positive"
-            print(result)
-            return jsonify(result=result)
-    return jsonify(error='Note not found or user not authorized')
+    print(noteId)
+    conn = sqlite3.connect('./instance/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT data from Note where id=?",(noteId,))
+    data = cursor.fetchall()
+    print(data)
+    conn.close()
+    return 'Data printed in terminal'
+# def input():
+#     data = request.json
+#     noteId = data['noteId']
+#     print(noteId)
+#     note = json.loads(request.data)
+#     # noteId = note['noteId']
+#     note = Note.query.get(noteId)
+#     print(note)
+#     if note:
+#         if note.user_id == current_user.id:
+#             result = "Positive"
+#             print(result)
+#             # return jsonify(result=result)
+#             return render_template('career.html', result=result, user=current_user)
+#     return jsonify(error='Note not found or user not authorized')
+# def input():
+#     data = request.json
+#     noteId = data['noteId']
+#     result = "result"
+#     if (request.method == "GET"):
+#         with sqlite3.connect("./instance/database.db") as con:
+
+#             cursor = con.cursor()
+
+#             try:
+#                 cursor.execute( "SELECT data from Note where id=?",(noteId))
+#                     # "SELECT marks.std_id,student.std_fname,student.std_lname,SUM(marks) as total_marks FROM Marks marks JOIN Student student ON marks.std_id = student.std_id WHERE date = CURRENT_DATE GROUP BY marks.std_id;")
+
+#                 rows = cursor.fetchall()
+#                 noteList = rows[0]
+#                 result = "Positive"
+#                 return render_template("career.html", result=result, user=current_user)
+#             except Error as e:
+#                 print(e)
+#         return render_template("career.html", user=current_user)
 
 
-# @views.route('/predict', methods=['GET',['POST']])
-# def predict(data):
-#     text = data
-#
-#     MODEL = f"cardiffnlp/twitter-roberta-base-sentiment"
-#     tokenizer = AutoTokenizer.from_pretrained(MODEL)
-#     model = AutoModelForSequenceClassification.from_pretrained(MODEL)
-#
-#     encoded_text = tokenizer(text, return_tensors='pt')
-#     output = model(**encoded_text)
-#     scores = output[0][0].detach().numpy()
-#     scores = softmax(scores)
-#     scores_dict = {
-#         'roberta_neg': scores[0],
-#         'roberta_neu': scores[1],
-#         'roberta_pos': scores[2]
-#     }
-#     print(scores_dict)
-#     print(text)
+
+
 
