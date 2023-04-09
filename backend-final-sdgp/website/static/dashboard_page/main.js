@@ -9,3 +9,4 @@ navOpenBtn.addEventListener("click", () => {
 navCloseBtn.addEventListener("click", () => {
     navbar.classList.remove("open_sidebar");
 })
+

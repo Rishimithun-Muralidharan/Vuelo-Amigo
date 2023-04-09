@@ -1,45 +1,45 @@
 let recentActivtyList = [{
         name: 'Agerotunm Houstianianum',
-        orderTitle: 'blha blah',
-        personImage: './images/profile_pics/1.webp',
+        orderTitle: 'Trip was amazing with sri lanka airlines.',
+        personImage: '../static/dashboard_page/images/profile_pics/1.webp',
         recordArrivalTime: '3 min ago'
 
     },
     {
         name: 'ShyamKumar Tala',
-        orderTitle: 'Order a new plant',
-        personImage: './images/profile_pics/2.webp',
+        orderTitle: 'Very attentive staff in emirates. Im very happy about the service.',
+        personImage: '../static/dashboard_page/images/profile_pics/2.webp',
         recordArrivalTime: '23 hr ago'
 
     },
     {
         name: 'Jaasmin Sandlass',
-        orderTitle: 'Order a new plant',
-        personImage: './images/profile_pics/11.webp',
+        orderTitle: 'Very poor service at bangladesh airlines, not recommending for anyone.',
+        personImage: '../static/dashboard_page/images/profile_pics/11.webp',
         recordArrivalTime: '43 min ago'
 
     },
     {
         name: 'Devanshi Mohan',
-        orderTitle: 'Order a new plant',
-        personImage: './images/profile_pics/22.webp',
+        orderTitle: 'Dubai airlines service was amazing but food is not that much good.',
+        personImage: '../static/dashboard_page/images/profile_pics/22.webp',
         recordArrivalTime: '55 min ago'
 
     },
-    {
-        name: 'Thomas Grrece',
-        orderTitle: 'Order a new plant',
-        personImage: './images/profile_pics/3.webp',
-        recordArrivalTime: '1 hr ago'
+    // {
+    //     name: 'Thomas Grrece',
+    //     orderTitle: 'Order a new plant',
+    //     personImage: '../static/dashboard_page/images/profile_pics/3.webp',
+    //     recordArrivalTime: '1 hr ago'
 
-    },
-    {
-        name: 'Dilshad Erani',
-        orderTitle: 'Order a new plant',
-        personImage: './images/profile_pics/33.webp',
-        recordArrivalTime: '2 hr min ago'
+    // },
+    // {
+    //     name: 'Dilshad Erani',
+    //     orderTitle: 'Order a new plant',
+    //     personImage: '../static/dashboard_page/images/profile_pics/33.webp',
+    //     recordArrivalTime: '2 hr min ago'
 
-    },
+    // },
 ]
 
 //    <div class = "record" >

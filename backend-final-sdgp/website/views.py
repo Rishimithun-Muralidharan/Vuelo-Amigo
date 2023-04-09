@@ -3,6 +3,7 @@ from sqlite3 import Error
 from flask import Blueprint, render_template, request, flash , jsonify
 from flask_login import login_required, current_user
 from .models import Note
+from .ml import prediction
 from . import db
 import json
 views = Blueprint('views', __name__)
@@ -68,8 +69,15 @@ def input():
     cursor.execute("SELECT data from Note where id=?",(noteId,))
     data = cursor.fetchall()
     print(data)
-    conn.close()
-    return 'Data printed in terminal'
+    # print(type(data))
+    input_tuple = data
+    output = input_tuple[0][0].strip()
+    print(output)
+    result = prediction(output)
+    print(result)
+    return jsonify({
+        'result':result
+    })
 # def input():
 #     data = request.json
 #     noteId = data['noteId']

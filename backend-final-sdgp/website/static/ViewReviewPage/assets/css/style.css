@@ -9825,3 +9825,10 @@ div#mCSB_1_container{
 .search-field .top-search .search-btn button i{
   margin-right: 8px;
 }
+
+
+#result_final{
+  font-weight: 600;
+  font-size: 23px;
+  color: red
+}

@@ -332,7 +332,7 @@
                                             {{ note.data }}
                                             <br>
                                             <br>
-                                            <button type="button" class="theme-btn" onClick="inputText({{ note.id }})">
+                                            <button type="button" class="theme-btn" onClick="inputText({{note.id}})">
                                                 <span aria-hidden="true">Analyze</span>
                                             </button>
                                             <br>
@@ -374,6 +374,8 @@
                             <div class="sidebar-widget social-widget">
                                 <div class="widget-title">
                                     <h4>Results</h4>
+                                    <br>
+                                    <p id="result_final" class="result_final"></p>
                                 </div>
                                 <ul class="social-links clearfix">
 <!-- {#                                    <li><a href="blog-1.html"><i class="fab fa-facebook-f"></i></a></li>#}
@@ -440,8 +442,9 @@
     <!-- main-js -->
     <script src="{{ url_for('static', filename='ViewReviewPage/assets/js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='/index.js') }}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sentiment/4.1.0/sentiment.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function() {
         $('#submit').click(function() {
           var noteId = $('#noteId').val();
@@ -457,7 +460,7 @@
           });
         });
       });
-    </script>
+    </script>  -->
 
 
         <script type="text/javascript">
@@ -465,23 +468,29 @@
                 fetch("/input", {
                     method: "POST",
                     body: JSON.stringify({ noteId: noteId }),
-                }).then((_res) => {
-                    window.location.href = "/viewreview";
+                }).then((response) =>  response.json())
+                .then((data) => {
+                    let result = data.result;
+                    console.log(result);
+                    var result_final = document.getElementById("result_final");
+                    result_final.innerText = result;
+
                 });
+                
             }
         </script>
 
         <script type="text/javascript">
 			function deleteNote(noteId) {
 				fetch("/delete-note", {
-					method: "POST",
 					body: JSON.stringify({ noteId: noteId }),
+					method: "POST",
 				}).then((_res) => {
 					window.location.href = "/viewreview";
 				});
 			}
 		</script>
-
+        
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from azim.commonsupport.com/Realshed/blog-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Dec 2022 13:33:33 GMT -->
